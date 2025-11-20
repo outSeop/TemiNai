@@ -106,4 +106,4 @@ public class VoskSpeechManager {
             Log.e(TAG, "Stop error", e);
         }
     }
-}`
+}

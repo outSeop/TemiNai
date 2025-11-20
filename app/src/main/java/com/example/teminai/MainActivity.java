@@ -268,6 +268,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // 길찾기 매핑
     private Map<String, String> initIdToLocationName() {
         Map<String, String> map = new HashMap<>();
         map.put("immersive media", "");
