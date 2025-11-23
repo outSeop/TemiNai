@@ -1,13 +1,12 @@
- # 1) 리액트 빌드
+# 1) 리액트 빌드
 cd ~/AndroidStudioProjects/TemiNai/TemiNai
 npm run build
 
-# 2) dist → 안드로이드 assets 복사
+# 2) dist → 안드로이드 assets/web 복사
 cd ~/AndroidStudioProjects/TemiNai
-rm -rf app/src/main/assets/*
-mkdir -p app/src/main/assets
-cp -R TemiNai/dist/* app/src/main/assets/
+rm -rf app/src/main/assets/web
+mkdir -p app/src/main/assets/web
+cp -R TemiNai/dist/* app/src/main/assets/web/
 
-# 3) 테미에 설치
+# 3) 테미 설치
 ./gradlew installDebug
-# 또는 apk 빌드 후 adb install

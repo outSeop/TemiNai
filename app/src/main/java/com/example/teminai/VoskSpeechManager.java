@@ -33,19 +33,14 @@ public class VoskSpeechManager {
 
     /** 모델 로드 */
     public void loadModel() {
-        StorageService.unpack(context, "vosk-model-small-ko-0.22",
-                "model",
-                (model) -> {
-                    Log.d(TAG, "Vosk model loaded");
-                    this.model = model;
-                },
-                (exception) -> {
-                    Log.e(TAG, "Failed to load model", exception);
-                    callback.onError("모델 로드 실패: " + exception.getMessage());
-                }
-        );
+        String modelPath = "/sdcard/temi_assets/vosk/vosk-model-small-ko-0.22";
+        try {
+            model = new Model(modelPath);
+            Log.d(TAG, "Vosk model loaded from sdcard");
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to load Vosk model", e);
+        }
     }
-
     /** STT 시작 */
     public void startListening() {
         if (model == null) {

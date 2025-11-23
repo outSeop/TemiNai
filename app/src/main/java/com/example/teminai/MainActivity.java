@@ -53,9 +53,21 @@ public class MainActivity extends AppCompatActivity {
     private TemiSpeechManager speechManager;
     private TemiBridge temiBridge;
     private VoskSpeechManager vosk;
+    private ServerSttClient serverSttClient;
 
     Map<String, String> map;
 
+    static {
+        try {
+            System.loadLibrary("vosk");
+            Log.d("VOSK_CHECK", "libvosk.so loaded successfully");
+        } catch (UnsatisfiedLinkError e) {
+            Log.e("VOSK_CHECK", "Failed to load libvosk.so: " + e.getMessage(), e);
+        } catch (Throwable t) {
+            // 혹시나 다른 에러까지 다 보기
+            Log.e("VOSK_CHECK", "Unexpected error while loading libvosk.so", t);
+        }
+    }
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,18 +96,10 @@ public class MainActivity extends AppCompatActivity {
         // JS <-> Android 브리지 등록
         webView.addJavascriptInterface(temiBridge, "TemiInterface");
 
-        vosk = new VoskSpeechManager(this, new VoskSpeechManager.SpeechCallback() {
-            @Override
-            public void onResult(String text) {
-                sendSpeechToJs(text);
-            }
+        String sttServerUrl = "qlak315.iptime.org:20330/stt"; // TODO: 너 서버 주소로 변경
+        serverSttClient = new ServerSttClient(webView, sttServerUrl);
 
-            @Override
-            public void onError(String error) {
-                speechManager.sendSpeechErrorToJs(error);
-            }
-        });
-        vosk.loadModel();
+
         // 디버그 모드에서 WebView 디버깅 허용
         WebView.setWebContentsDebuggingEnabled(true);
 
@@ -268,26 +272,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     // 길찾기 매핑
     private Map<String, String> initIdToLocationName() {
         Map<String, String> map = new HashMap<>();
-        map.put("immersive media", "");
-        map.put("data security", "");
-        map.put("future car", "");
-        map.put("secondary battery", "");
-        map.put("bio health", "");
-        map.put("intelligent robot", "");
-        map.put("new energy business", "");
-        map.put("big-data", "");
-        map.put("next generation displayer", "");
-        map.put("ai", "test");
-        map.put("next generation communications", "");
-        map.put("advanced materials", "");
-        map.put("next generation semiconductor", "");
-        map.put("green bio", "");
-        map.put("internet of things", "");
-        map.put("semiconductor department manager", "");
-        map.put("aviation drone", "");
+        map.put("immersive media", "immersive media");
+        map.put("data security", "data security");
+        map.put("future car", "future car");
+        map.put("secondary battery", "secondary battery");
+        map.put("bio health", "bio health");
+        map.put("intelligent robot", "intelligent robot");
+        map.put("new energy business", "new energy business");
+        map.put("big-data", "big-data");
+        map.put("next generation displayer", "next generation displayer");
+        map.put("ai", "ai");
+        map.put("next generation communications", "communications");
+        map.put("advanced materials", "advanced materials");
+        map.put("next generation semiconductor", "NGsemiconductor");
+        map.put("green bio", "green bio");
+        map.put("internet of things", "internet of things");
+        map.put("semiconductor department manager", "semiconductorDM");
+        map.put("aviation drone", "aviation drone");
+        map.put("rest area 1", "rest area 1");
+        map.put("rest area 2", "rest area 2");
         return map;
     }
 
@@ -343,6 +350,7 @@ public class MainActivity extends AppCompatActivity {
             if (robot != null) {
                 runOnUiThread(() -> robot.goTo(location));
             }
+            Log.d(TAG, "Finished goTo: "+ location);
         }
 
         // 🔊 JS에서 호출하는 마이크 시작 함수
@@ -383,10 +391,8 @@ public class MainActivity extends AppCompatActivity {
                 sendSpeechErrorToJs("Temi 로봇 인스턴스가 없습니다.");
                 return;
             }
-
             vosk.startListening();
         }
-
 
         @Override
         public void onAsrResult(@NonNull String asrResult, @NonNull SttLanguage sttLanguage) {

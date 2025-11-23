@@ -51,4 +51,4 @@ React TemiNai 폴더의 경우 내부적로 git이 있으니 수정사항 있으
 ## java
 자바는 코드는 “/TemiNai/app/src/main/java/com/example/teminai/MainActivity.java”에 위치해있습니다.
 
-길찾기에 경우 `// 길찾기 매핑` 주석아래 map에서 key는 react에서 설정한 id, value는 테미에서 설정한 location 이름입니다.
+길찾기에 경우 `// 길찾기 매핑` 주석아래 map에서 key는 react에서 설정한 id, value는 테미에서 설정한 location 이름입니다
