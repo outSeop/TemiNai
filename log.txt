@@ -584,23 +584,23 @@
 11-17 15:14:30.928   553  2757 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
 11-17 15:14:30.928   553  2757 V WindowManager: Application requested orientation -1, got rotation 0 which has compatible metrics
 11-17 15:14:30.929   553  2757 V WindowManager: setAppVisibility(Token{c85198f ActivityRecord{5c800ee u0 com.android.systemui/.recents.RecentsActivity t1456}}, visible=false): mNextAppTransition=TRANSIT_TASK_TO_FRONT hidden=false hiddenRequested=false Callers=com.android.server.am.ActivityStack.setVisible:1170 com.android.server.am.ActivityStack.ensureActivitiesVisibleLocked:1431 com.android.server.am.ActivityStackSupervisor.ensureActivitiesVisibleLocked:3305 com.android.server.am.ActivityManagerService.updateConfigurationLocked:17838 com.android.server.am.ActivityStack.resumeTopActivityInnerLocked:1964 com.android.server.am.ActivityStack.resumeTopActivityLocked:1587 
-11-17 15:14:30.930   553  2757 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:14:30.930   553  2757 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:14:30.930   553  2757 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
 11-17 15:14:30.938   553  2005 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
-11-17 15:14:30.939   553  2005 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:14:30.939   553  2005 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:14:30.939   553  2005 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
-11-17 15:14:30.961   553   727 I WindowStateAnimator: createSurface WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.MainActivity}: mDrawState=DRAW_PENDING
+11-17 15:14:30.961   553   727 I WindowStateAnimator: createSurface WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.ui.MainActivity}: mDrawState=DRAW_PENDING
 11-17 15:14:30.991   553   727 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
-11-17 15:14:30.993   553   727 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
-11-17 15:14:30.993   553   727 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=false
-11-17 15:14:31.194   553  1941 V WindowStateAnimator: finishDrawingLocked: mDrawState=COMMIT_DRAW_PENDING WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.MainActivity} in Surface(name=com.example.teminai/com.example.teminai.MainActivity)
-11-17 15:14:31.211   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=true, isAnimating=true
+11-17 15:14:30.993   553   727 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:14:30.993   553   727 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=false
+11-17 15:14:31.194   553  1941 V WindowStateAnimator: finishDrawingLocked: mDrawState=COMMIT_DRAW_PENDING WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.ui.MainActivity} in Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity)
+11-17 15:14:31.211   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=true, isAnimating=true
 11-17 15:14:31.211   553   595 V WindowManager: tokenMayBeDrawn: AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} freezingScreen=false mAppFreezing=false
-11-17 15:14:31.212   553   595 I WindowManager:   SURFACE SHOW (performShowLocked): Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}
+11-17 15:14:31.212   553   595 I WindowManager:   SURFACE SHOW (performShowLocked): Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}
 11-17 15:14:31.247   553   595 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
 11-17 15:14:31.249   553   727 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
 11-17 15:14:31.286   553   585 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
-11-17 15:14:31.547   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=true, isAnimating=false
+11-17 15:14:31.547   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=true, isAnimating=false
 11-17 15:14:31.547   553   595 V WindowManager: tokenMayBeDrawn: AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} freezingScreen=false mAppFreezing=false
 11-17 15:14:31.556   553   590 V WindowManager: setAppVisibility(Token{c85198f ActivityRecord{5c800ee u0 com.android.systemui/.recents.RecentsActivity t1456}}, visible=false): mNextAppTransition=TRANSIT_UNSET hidden=true hiddenRequested=true Callers=com.android.server.am.ActivityStack.stopActivityLocked:2764 com.android.server.am.ActivityStackSupervisor.activityIdleInternalLocked:2602 com.android.server.am.ActivityStackSupervisor$ActivityStackSupervisorHandler.activityIdleInternal:4017 com.android.server.am.ActivityStackSupervisor$ActivityStackSupervisorHandler.handleMessage:4040 android.os.Handler.dispatchMessage:102 android.os.Looper.loop:148 
 11-17 15:14:32.932   553  2744 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
@@ -1286,32 +1286,32 @@
 11-17 15:36:17.062   553  2758 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
 11-17 15:36:17.062   553  2758 V WindowManager: Application requested orientation -1, got rotation 0 which has compatible metrics
 11-17 15:36:17.063   553  2758 V WindowManager: setAppVisibility(Token{bcb281a ActivityRecord{83856c5 u0 com.roboteam.teamy.usa/com.roboteam.teamy.home.HomeActivity t1448}}, visible=false): mNextAppTransition=TRANSIT_TASK_TO_FRONT hidden=true hiddenRequested=false Callers=com.android.server.am.ActivityStack.setVisible:1170 com.android.server.am.ActivityStack.ensureActivitiesVisibleLocked:1431 com.android.server.am.ActivityStackSupervisor.ensureActivitiesVisibleLocked:3305 com.android.server.am.ActivityManagerService.updateConfigurationLocked:17838 com.android.server.am.ActivityStack.resumeTopActivityInnerLocked:1964 com.android.server.am.ActivityStack.resumeTopActivityLocked:1587 
-11-17 15:36:17.064   553  2758 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:17.064   553  2758 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:36:17.064   553  2758 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
-11-17 15:36:17.074   553  2744 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:17.074   553  2744 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:36:17.074   553  2744 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
 11-17 15:36:17.075   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:17.076   553  2745 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
-11-17 15:36:17.077   553  2745 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:17.077   553  2745 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:36:17.077   553  2745 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
 11-17 15:36:17.083   553   741 I WindowStateAnimator: createSurface WindowStateAnimator{1b1b081 }: mDrawState=DRAW_PENDING
 11-17 15:36:17.084   553   741 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
 11-17 15:36:17.084   553   741 V WindowManager: Resize reasons for w=Window{ed40d5a u0 com.roboteam.teamy.usa}:  contentInsetsChanged=false [0,0][0,0] visibleInsetsChanged=false [0,0][0,0] stableInsetsChanged=false [0,0][0,0] outsetsChanged=false [0,0][0,0] surfaceResized=true configChanged=true
 11-17 15:36:17.084   553   741 V WindowManager: Resizing window Window{ed40d5a u0 com.roboteam.teamy.usa} to 1920.0x41.0
-11-17 15:36:17.084   553   741 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:17.084   553   741 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:36:17.084   553   741 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
 11-17 15:36:17.094   553   741 V WindowState: Reporting new frame to Window{ed40d5a u0 com.roboteam.teamy.usa}: Rect(0, 0 - 1920, 41)
 11-17 15:36:17.095   553   741 I WindowState: Sending new config to window Window{ed40d5a u0 com.roboteam.teamy.usa}: 1920.0x41.0 / config={1.3 ?mcc?mnc ko_KR ldltr sw800dp w1280dp h800dp 240dpi xlrg land finger -keyb/v/h -nav/h s.5} overrideConfig={1.0 ?mcc?mnc ?locale ?layoutDir ?swdp ?wdp ?hdp ?density ?lsize ?long ?orien ?uimode ?night ?touch ?keyb/?/? ?nav/?}
 11-17 15:36:17.095   553   741 I WindowState: Resizing Window{ed40d5a u0 com.roboteam.teamy.usa} WITH DRAW PENDING
-11-17 15:36:17.098   553   741 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:17.098   553   741 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:36:17.098   553   741 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
 11-17 15:36:17.100   553   595 E WindowManager: Unknown window type: 2999
-11-17 15:36:17.101   553   586 I WindowStateAnimator: createSurface WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.MainActivity}: mDrawState=DRAW_PENDING
+11-17 15:36:17.101   553   586 I WindowStateAnimator: createSurface WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.ui.MainActivity}: mDrawState=DRAW_PENDING
 11-17 15:36:17.102   714  1612 D Surface : Surface::final mReqUsage=a00
 11-17 15:36:17.102   714  1612 D mali_winsys: EGLint new_window_surface(egl_winsys_display*, void*, EGLSurface, EGLConfig, egl_winsys_surface**, egl_color_buffer_format*, EGLBoolean) returns 0x3000
 11-17 15:36:17.102   553   586 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
-11-17 15:36:17.103   553   586 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
-11-17 15:36:17.103   553   586 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=false
+11-17 15:36:17.103   553   586 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:17.103   553   586 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=false
 11-17 15:36:17.105 14059 14160 D Surface : Surface::final mReqUsage=a00
 11-17 15:36:17.105 14059 14160 D mali_winsys: EGLint new_window_surface(egl_winsys_display*, void*, EGLSurface, EGLConfig, egl_winsys_surface**, egl_color_buffer_format*, EGLBoolean) returns 0x3000
 11-17 15:36:17.111   553   595 E WindowManager: Unknown window type: 2999
@@ -1334,11 +1334,11 @@
 11-17 15:36:17.257   195  3201 D gralloc : Isfb=0, [41,1920,48,192], fmt=1, byte_stride=192
 11-17 15:36:17.261   553   712 V WindowStateAnimator: finishDrawingLocked: mDrawState=COMMIT_DRAW_PENDING WindowStateAnimator{1b1b081 } in Surface(name=)
 11-17 15:36:17.261   553   595 I WindowManager:   SURFACE SHOW (performShowLocked): Window{ed40d5a u0 com.roboteam.teamy.usa}
-11-17 15:36:17.261   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
-11-17 15:36:17.261   553   595 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=true
+11-17 15:36:17.261   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:17.261   553   595 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=true
 11-17 15:36:17.281   553   595 E WindowManager: Unknown window type: 2999
-11-17 15:36:17.282   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
-11-17 15:36:17.282   553   595 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=true
+11-17 15:36:17.282   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:17.282   553   595 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=true
 11-17 15:36:17.291   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:17.291   195  3201 D gralloc : Isfb=0, [41,1920,48,192], fmt=1, byte_stride=192
 11-17 15:36:17.303   553   595 E WindowManager: Unknown window type: 2999
@@ -1346,10 +1346,10 @@
 11-17 15:36:17.338   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:17.361   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:17.369   195  1348 D gralloc : Isfb=0, [1200,1920,1200,4800], fmt=1, byte_stride=4800
-11-17 15:36:17.372   553  1485 V WindowStateAnimator: finishDrawingLocked: mDrawState=COMMIT_DRAW_PENDING WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.MainActivity} in Surface(name=com.example.teminai/com.example.teminai.MainActivity)
-11-17 15:36:17.373   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=true, isAnimating=true
+11-17 15:36:17.372   553  1485 V WindowStateAnimator: finishDrawingLocked: mDrawState=COMMIT_DRAW_PENDING WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.ui.MainActivity} in Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity)
+11-17 15:36:17.373   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=true, isAnimating=true
 11-17 15:36:17.373   553   595 V WindowManager: tokenMayBeDrawn: AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} freezingScreen=false mAppFreezing=false
-11-17 15:36:17.379   553   595 I WindowManager:   SURFACE SHOW (performShowLocked): Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}
+11-17 15:36:17.379   553   595 I WindowManager:   SURFACE SHOW (performShowLocked): Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}
 11-17 15:36:17.383   553   595 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
 11-17 15:36:17.387   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:17.388   553   590 V WindowManager: setAppVisibility(Token{bcb281a ActivityRecord{83856c5 u0 com.roboteam.teamy.usa/com.roboteam.teamy.home.HomeActivity t1448}}, visible=false): mNextAppTransition=TRANSIT_UNSET hidden=true hiddenRequested=true Callers=com.android.server.am.ActivityStack.stopActivityLocked:2764 com.android.server.am.ActivityStackSupervisor.activityIdleInternalLocked:2602 com.android.server.am.ActivityStackSupervisor$ActivityStackSupervisorHandler.activityIdleInternal:4017 com.android.server.am.ActivityStackSupervisor$ActivityStackSupervisorHandler.handleMessage:4040 android.os.Handler.dispatchMessage:102 android.os.Looper.loop:148 
@@ -1392,7 +1392,7 @@
 11-17 15:36:17.998   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:18.016   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:18.033   553   595 E WindowManager: Unknown window type: 2999
-11-17 15:36:18.052   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=true, isAnimating=false
+11-17 15:36:18.052   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=true, isAnimating=false
 11-17 15:36:18.052   553   595 V WindowManager: tokenMayBeDrawn: AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} freezingScreen=false mAppFreezing=false
 11-17 15:36:18.063   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:18.071   195   195 W SurfaceFlinger: couldn't log to binary event log: overflow.
@@ -1808,32 +1808,32 @@
 11-17 15:36:36.027   553   741 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
 11-17 15:36:36.027   553   741 V WindowManager: Application requested orientation -1, got rotation 0 which has compatible metrics
 11-17 15:36:36.028   553   741 V WindowManager: setAppVisibility(Token{bcb281a ActivityRecord{83856c5 u0 com.roboteam.teamy.usa/com.roboteam.teamy.home.HomeActivity t1448}}, visible=false): mNextAppTransition=TRANSIT_TASK_TO_FRONT hidden=true hiddenRequested=false Callers=com.android.server.am.ActivityStack.setVisible:1170 com.android.server.am.ActivityStack.ensureActivitiesVisibleLocked:1431 com.android.server.am.ActivityStackSupervisor.ensureActivitiesVisibleLocked:3305 com.android.server.am.ActivityManagerService.updateConfigurationLocked:17838 com.android.server.am.ActivityStack.resumeTopActivityInnerLocked:1964 com.android.server.am.ActivityStack.resumeTopActivityLocked:1587 
-11-17 15:36:36.028   553   741 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:36.028   553   741 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:36:36.028   553   741 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
-11-17 15:36:36.034   553  2757 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:36.034   553  2757 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:36:36.034   553  2757 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
 11-17 15:36:36.036   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:36.042   553  1485 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
-11-17 15:36:36.042   553  1485 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:36.042   553  1485 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:36:36.042   553  1485 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
 11-17 15:36:36.044   553  2762 I WindowStateAnimator: createSurface WindowStateAnimator{feeae86 }: mDrawState=DRAW_PENDING
 11-17 15:36:36.060   553  2762 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
 11-17 15:36:36.060   553  2762 V WindowManager: Resize reasons for w=Window{7a96b6b u0 com.roboteam.teamy.usa}:  contentInsetsChanged=false [0,0][0,0] visibleInsetsChanged=false [0,0][0,0] stableInsetsChanged=false [0,0][0,0] outsetsChanged=false [0,0][0,0] surfaceResized=true configChanged=true
 11-17 15:36:36.060   553  2762 V WindowManager: Resizing window Window{7a96b6b u0 com.roboteam.teamy.usa} to 1920.0x41.0
-11-17 15:36:36.060   553  2762 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:36.060   553  2762 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:36:36.060   553  2762 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
 11-17 15:36:36.077   553  2762 V WindowState: Reporting new frame to Window{7a96b6b u0 com.roboteam.teamy.usa}: Rect(0, 0 - 1920, 41)
 11-17 15:36:36.077   553  2762 I WindowState: Sending new config to window Window{7a96b6b u0 com.roboteam.teamy.usa}: 1920.0x41.0 / config={1.3 ?mcc?mnc ko_KR ldltr sw800dp w1280dp h800dp 240dpi xlrg land finger -keyb/v/h -nav/h s.5} overrideConfig={1.0 ?mcc?mnc ?locale ?layoutDir ?swdp ?wdp ?hdp ?density ?lsize ?long ?orien ?uimode ?night ?touch ?keyb/?/? ?nav/?}
 11-17 15:36:36.077   553  2762 I WindowState: Resizing Window{7a96b6b u0 com.roboteam.teamy.usa} WITH DRAW PENDING
-11-17 15:36:36.080   553  2762 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:36.080   553  2762 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
 11-17 15:36:36.080   553  2762 V WindowManager: Not displayed: s=null pv=true mDrawState=NO_SURFACE ah=false th=false a=false
 11-17 15:36:36.081   553   595 E WindowManager: Unknown window type: 2999
-11-17 15:36:36.082   553   727 I WindowStateAnimator: createSurface WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.MainActivity}: mDrawState=DRAW_PENDING
+11-17 15:36:36.082   553   727 I WindowStateAnimator: createSurface WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.ui.MainActivity}: mDrawState=DRAW_PENDING
 11-17 15:36:36.082   714  1612 D Surface : Surface::final mReqUsage=a00
 11-17 15:36:36.082   714  1612 D mali_winsys: EGLint new_window_surface(egl_winsys_display*, void*, EGLSurface, EGLConfig, egl_winsys_surface**, egl_color_buffer_format*, EGLBoolean) returns 0x3000
 11-17 15:36:36.097   553   727 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
-11-17 15:36:36.097   553   727 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=true
-11-17 15:36:36.097   553   727 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=false
+11-17 15:36:36.097   553   727 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=true
+11-17 15:36:36.097   553   727 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=false
 11-17 15:36:36.099   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:36.100 14059 14160 D Surface : Surface::final mReqUsage=a00
 11-17 15:36:36.100   195   385 D gralloc : Isfb=0, [1920,41,1920,7680], fmt=1, byte_stride=7680
@@ -1859,11 +1859,11 @@
 11-17 15:36:36.272   553  1941 V WindowStateAnimator: finishDrawingLocked: mDrawState=COMMIT_DRAW_PENDING WindowStateAnimator{feeae86 } in Surface(name=)
 11-17 15:36:36.272   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:36.289   195  1348 D gralloc : Isfb=0, [41,1920,48,192], fmt=1, byte_stride=192
-11-17 15:36:36.290   553  2757 V WindowStateAnimator: finishDrawingLocked: mDrawState=COMMIT_DRAW_PENDING WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.MainActivity} in Surface(name=com.example.teminai/com.example.teminai.MainActivity)
+11-17 15:36:36.290   553  2757 V WindowStateAnimator: finishDrawingLocked: mDrawState=COMMIT_DRAW_PENDING WindowStateAnimator{a446307 com.example.teminai/com.example.teminai.ui.MainActivity} in Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity)
 11-17 15:36:36.290   553   595 I WindowManager:   SURFACE SHOW (performShowLocked): Window{7a96b6b u0 com.roboteam.teamy.usa}
-11-17 15:36:36.290   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=true, isAnimating=true
+11-17 15:36:36.290   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=true, isAnimating=true
 11-17 15:36:36.290   553   595 V WindowManager: tokenMayBeDrawn: AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} freezingScreen=false mAppFreezing=false
-11-17 15:36:36.293   553   595 I WindowManager:   SURFACE SHOW (performShowLocked): Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}
+11-17 15:36:36.293   553   595 I WindowManager:   SURFACE SHOW (performShowLocked): Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}
 11-17 15:36:36.296   553   595 V WindowManager: Done at AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} -- full screen, return -1
 11-17 15:36:36.298   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:36.310   553   595 E WindowManager: Unknown window type: 2999
@@ -1907,7 +1907,7 @@
 11-17 15:36:36.911   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:36.929   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:36:36.946   553   595 E WindowManager: Unknown window type: 2999
-11-17 15:36:36.967   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=true, isAnimating=false
+11-17 15:36:36.967   553   595 V WindowManager: Eval win Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=true, isAnimating=false
 11-17 15:36:36.967   553   595 V WindowManager: tokenMayBeDrawn: AppWindowToken{ac9a314 token=Token{82c5967 ActivityRecord{9777926 u0 com.example.teminai/.MainActivity t1520}}} freezingScreen=false mAppFreezing=false
 11-17 15:36:36.972   553   590 V WindowManager: setAppVisibility(Token{bcb281a ActivityRecord{83856c5 u0 com.roboteam.teamy.usa/com.roboteam.teamy.home.HomeActivity t1448}}, visible=false): mNextAppTransition=TRANSIT_UNSET hidden=true hiddenRequested=true Callers=com.android.server.am.ActivityStack.stopActivityLocked:2764 com.android.server.am.ActivityStackSupervisor.activityIdleInternalLocked:2602 com.android.server.am.ActivityStackSupervisor$ActivityStackSupervisorHandler.activityIdleInternal:4017 com.android.server.am.ActivityStackSupervisor$ActivityStackSupervisorHandler.handleMessage:4040 android.os.Handler.dispatchMessage:102 android.os.Looper.loop:148 
 11-17 15:36:36.973   553   590 V WindowManager: setAppVisibility(Token{57b66d ActivityRecord{e4dae84 u0 com.roboteam.teamy.usa/com.roboteam.teamy.internalactivities.list.mvp.activities.TabContainerActivity t1522}}, visible=false): mNextAppTransition=TRANSIT_UNSET hidden=true hiddenRequested=true Callers=com.android.server.am.ActivityStack.stopActivityLocked:2764 com.android.server.am.ActivityStackSupervisor.activityIdleInternalLocked:2602 com.android.server.am.ActivityStackSupervisor$ActivityStackSupervisorHandler.activityIdleInternal:4017 com.android.server.am.ActivityStackSupervisor$ActivityStackSupervisorHandler.handleMessage:4040 android.os.Handler.dispatchMessage:102 android.os.Looper.loop:148 
@@ -2153,7 +2153,7 @@
 11-17 15:37:30.721   553   727 I ActivityManager: Killing 832:android.process.acore/u0a2 (adj 15): empty for 4826s
 11-17 15:37:30.774   553   727 I ActivityManager: Killing 14059:com.example.teminai/u0a61 (adj 9): remove task
 11-17 15:37:30.931   553  2744 D GraphicsStats: Buffer count: 6
-11-17 15:37:30.931   553   741 I WindowState: WIN DEATH: Window{e75159c u0 com.example.teminai/com.example.teminai.MainActivity}
+11-17 15:37:30.931   553   741 I WindowState: WIN DEATH: Window{e75159c u0 com.example.teminai/com.example.teminai.ui.MainActivity}
 11-17 15:37:30.933   238   485 I chatty  : uid=1013(media) Binder_1 expire 1 line
 11-17 15:37:30.933   238 14291 I chatty  : uid=1013(media) /system/bin/mediaserver expire 4 lines
 11-17 15:37:30.946   553   595 E WindowManager: Unknown window type: 2999
@@ -2326,19 +2326,19 @@
 11-17 15:37:33.736 15451 15521 D OpenGLRenderer: Use EGL_SWAP_BEHAVIOR_PRESERVED: true
 11-17 15:37:33.790 15451 15507 E libEGL  : validate_display:255 error 3008 (EGL_BAD_DISPLAY)
 11-17 15:37:33.817 15451 15451 D TemiSdkServiceConnection: onServiceConnected(ComponentName, IBinder) (name=ComponentInfo{com.roboteam.teamy.usa/com.roboteam.teamy.sdk.SdkService}, service=android.os.BinderProxy@73ba620)
-11-17 15:37:33.842   553  1941 I WindowStateAnimator: createSurface WindowStateAnimator{667fc93 com.example.teminai/com.example.teminai.MainActivity}: mDrawState=DRAW_PENDING
+11-17 15:37:33.842   553  1941 I WindowStateAnimator: createSurface WindowStateAnimator{667fc93 com.example.teminai/com.example.teminai.ui.MainActivity}: mDrawState=DRAW_PENDING
 11-17 15:37:33.843   553  1941 V WindowManager: Done at AppWindowToken{77a9c72 token=Token{f27e7e6 ActivityRecord{24c4641 u0 com.example.teminai/.MainActivity t1524}}} -- full screen, return -1
 11-17 15:37:33.844   553  1941 V WindowManager: Eval win Window{fd20dbe u0 Starting com.example.teminai}: isDrawn=true, isAnimating=false
-11-17 15:37:33.844   553  1941 V WindowManager: Eval win Window{f5a96b8 u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=false
-11-17 15:37:33.844   553  1941 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=false
-11-17 15:37:33.844   553  1941 V WindowManager: Resize reasons for w=Window{f5a96b8 u0 com.example.teminai/com.example.teminai.MainActivity}:  contentInsetsChanged=false [0,0][0,0] visibleInsetsChanged=false [0,0][0,0] stableInsetsChanged=false [0,0][0,0] outsetsChanged=false [0,0][0,0] surfaceResized=true configChanged=true
-11-17 15:37:33.844   553  1941 V WindowManager: Resizing window Window{f5a96b8 u0 com.example.teminai/com.example.teminai.MainActivity} to 1920.0x1200.0
-11-17 15:37:33.847   553  1941 V WindowState: Reporting new frame to Window{f5a96b8 u0 com.example.teminai/com.example.teminai.MainActivity}: Rect(0, 0 - 1920, 1200)
-11-17 15:37:33.847   553  1941 I WindowState: Sending new config to window Window{f5a96b8 u0 com.example.teminai/com.example.teminai.MainActivity}: 1920.0x1200.0 / config={1.3 ?mcc?mnc ko_KR ldltr sw800dp w1280dp h800dp 240dpi xlrg land finger -keyb/v/h -nav/h s.5} overrideConfig={1.0 ?mcc?mnc ?locale ?layoutDir ?swdp ?wdp ?hdp ?density ?lsize ?long ?orien ?uimode ?night ?touch ?keyb/?/? ?nav/?}
-11-17 15:37:33.847   553  1941 I WindowState: Resizing Window{f5a96b8 u0 com.example.teminai/com.example.teminai.MainActivity} WITH DRAW PENDING
+11-17 15:37:33.844   553  1941 V WindowManager: Eval win Window{f5a96b8 u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=false
+11-17 15:37:33.844   553  1941 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=false
+11-17 15:37:33.844   553  1941 V WindowManager: Resize reasons for w=Window{f5a96b8 u0 com.example.teminai/com.example.teminai.ui.MainActivity}:  contentInsetsChanged=false [0,0][0,0] visibleInsetsChanged=false [0,0][0,0] stableInsetsChanged=false [0,0][0,0] outsetsChanged=false [0,0][0,0] surfaceResized=true configChanged=true
+11-17 15:37:33.844   553  1941 V WindowManager: Resizing window Window{f5a96b8 u0 com.example.teminai/com.example.teminai.ui.MainActivity} to 1920.0x1200.0
+11-17 15:37:33.847   553  1941 V WindowState: Reporting new frame to Window{f5a96b8 u0 com.example.teminai/com.example.teminai.ui.MainActivity}: Rect(0, 0 - 1920, 1200)
+11-17 15:37:33.847   553  1941 I WindowState: Sending new config to window Window{f5a96b8 u0 com.example.teminai/com.example.teminai.ui.MainActivity}: 1920.0x1200.0 / config={1.3 ?mcc?mnc ko_KR ldltr sw800dp w1280dp h800dp 240dpi xlrg land finger -keyb/v/h -nav/h s.5} overrideConfig={1.0 ?mcc?mnc ?locale ?layoutDir ?swdp ?wdp ?hdp ?density ?lsize ?long ?orien ?uimode ?night ?touch ?keyb/?/? ?nav/?}
+11-17 15:37:33.847   553  1941 I WindowState: Resizing Window{f5a96b8 u0 com.example.teminai/com.example.teminai.ui.MainActivity} WITH DRAW PENDING
 11-17 15:37:33.848   553  1941 V WindowManager: Eval win Window{fd20dbe u0 Starting com.example.teminai}: isDrawn=true, isAnimating=false
-11-17 15:37:33.848   553  1941 V WindowManager: Eval win Window{f5a96b8 u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=false, isAnimating=false
-11-17 15:37:33.848   553  1941 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=false
+11-17 15:37:33.848   553  1941 V WindowManager: Eval win Window{f5a96b8 u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=false, isAnimating=false
+11-17 15:37:33.848   553  1941 V WindowManager: Not displayed: s=Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity) pv=true mDrawState=DRAW_PENDING ah=false th=false a=false
 11-17 15:37:33.850 15451 15521 I OpenGLRenderer: Initialized EGL, version 1.4
 11-17 15:37:33.855 15451 15521 D Surface : Surface::final mReqUsage=a00
 11-17 15:37:33.855 15451 15521 D mali_winsys: EGLint new_window_surface(egl_winsys_display*, void*, EGLSurface, EGLConfig, egl_winsys_surface**, egl_color_buffer_format*, EGLBoolean) returns 0x3000
@@ -2348,11 +2348,11 @@
 11-17 15:37:33.896   195   205 D gralloc : Isfb=0, [1920,1200,1920,7680], fmt=1, byte_stride=7680
 11-17 15:37:33.973   195  1348 D gralloc : Isfb=0, [1200,1920,1200,4800], fmt=1, byte_stride=4800
 11-17 15:37:34.015   195   205 D gralloc : Isfb=0, [1200,1920,1200,4800], fmt=1, byte_stride=4800
-11-17 15:37:34.019   553   586 V WindowStateAnimator: finishDrawingLocked: mDrawState=COMMIT_DRAW_PENDING WindowStateAnimator{667fc93 com.example.teminai/com.example.teminai.MainActivity} in Surface(name=com.example.teminai/com.example.teminai.MainActivity)
+11-17 15:37:34.019   553   586 V WindowStateAnimator: finishDrawingLocked: mDrawState=COMMIT_DRAW_PENDING WindowStateAnimator{667fc93 com.example.teminai/com.example.teminai.ui.MainActivity} in Surface(name=com.example.teminai/com.example.teminai.ui.MainActivity)
 11-17 15:37:34.020   553   595 V WindowManager: Eval win Window{fd20dbe u0 Starting com.example.teminai}: isDrawn=true, isAnimating=false
-11-17 15:37:34.020   553   595 V WindowManager: Eval win Window{f5a96b8 u0 com.example.teminai/com.example.teminai.MainActivity}: isDrawn=true, isAnimating=false
+11-17 15:37:34.020   553   595 V WindowManager: Eval win Window{f5a96b8 u0 com.example.teminai/com.example.teminai.ui.MainActivity}: isDrawn=true, isAnimating=false
 11-17 15:37:34.020   553   595 V WindowManager: tokenMayBeDrawn: AppWindowToken{77a9c72 token=Token{f27e7e6 ActivityRecord{24c4641 u0 com.example.teminai/.MainActivity t1524}}} freezingScreen=false mAppFreezing=false
-11-17 15:37:34.021   553   595 I WindowManager:   SURFACE SHOW (performShowLocked): Window{f5a96b8 u0 com.example.teminai/com.example.teminai.MainActivity}
+11-17 15:37:34.021   553   595 I WindowManager:   SURFACE SHOW (performShowLocked): Window{f5a96b8 u0 com.example.teminai/com.example.teminai.ui.MainActivity}
 11-17 15:37:34.022   553   595 I ActivityManager: Displayed com.example.teminai/.MainActivity: +2s9ms
 11-17 15:37:34.025   553   595 E WindowManager: Unknown window type: 2999
 11-17 15:37:34.041   553   595 E WindowManager: Unknown window type: 2999
@@ -2565,7 +2565,8 @@
 11-17 15:37:39.854   238 15574 I FFPlayer_Version: 
 11-17 15:37:39.854   238 15574 I FFPlayer_Version: starting main player: v2.1 2019-03-14-11:37:59.9a7e7b0a.Zho
 11-17 15:37:39.854   238 15574 I FFPlayer_Version: ffplayer running on: rk3288
-11-17 15:37:39.854   238 15574 I FFPlayer_Version: 
+11-17 15:37:39.854   238 15574 I FFPlayer_Version: 
+
 11-17 15:37:39.854   238 15574 I FFPlayer_Version: ******************************************
 11-17 15:37:39.854   238 15574 I RockFFPlayer: setDataSource(url =/system/media/audio/ui/VideoStop.ogg)
 11-17 15:37:39.854   238   485 D RockFFPlayer: prepareAsync ok
@@ -3043,7 +3044,8 @@
 11-17 15:37:40.594   238 15593 I FFPlayer_Version: 
 11-17 15:37:40.594   238 15593 I FFPlayer_Version: starting main player: v2.1 2019-03-14-11:37:59.9a7e7b0a.Zho
 11-17 15:37:40.594   238 15593 I FFPlayer_Version: ffplayer running on: rk3288
-11-17 15:37:40.594   238 15593 I FFPlayer_Version: 
+11-17 15:37:40.594   238 15593 I FFPlayer_Version: 
+
 11-17 15:37:40.594   238 15593 I FFPlayer_Version: ******************************************
 11-17 15:37:40.594   238 15593 I RockFFPlayer: setDataSource(url =/system/media/audio/ui/camera_click.ogg)
 11-17 15:37:40.594   238 11996 D RockFFPlayer: prepareAsync ok
@@ -3191,7 +3193,8 @@
 11-17 15:37:40.604   238 15597 I FFPlayer_Version: 
 11-17 15:37:40.604   238 15597 I FFPlayer_Version: starting main player: v2.1 2019-03-14-11:37:59.9a7e7b0a.Zho
 11-17 15:37:40.604   238 15597 I FFPlayer_Version: ffplayer running on: rk3288
-11-17 15:37:40.604   238 15597 I FFPlayer_Version: 
+11-17 15:37:40.604   238 15597 I FFPlayer_Version: 
+
 11-17 15:37:40.604   238 15597 I FFPlayer_Version: ******************************************
 11-17 15:37:40.604   238 15597 I RockFFPlayer: setDataSource(url =/system/media/audio/ui/VideoRecord.ogg)
 11-17 15:37:40.604   238 11996 D RockFFPlayer: prepareAsync ok
@@ -3339,7 +3342,8 @@
 11-17 15:37:40.620   238 15601 I FFPlayer_Version: 
 11-17 15:37:40.620   238 15601 I FFPlayer_Version: starting main player: v2.1 2019-03-14-11:37:59.9a7e7b0a.Zho
 11-17 15:37:40.620   238 15601 I FFPlayer_Version: ffplayer running on: rk3288
-11-17 15:37:40.620   238 15601 I FFPlayer_Version: 
+11-17 15:37:40.620   238 15601 I FFPlayer_Version: 
+
 11-17 15:37:40.620   238 15601 I FFPlayer_Version: ******************************************
 11-17 15:37:40.620   238 15601 I RockFFPlayer: setDataSource(url =/system/media/audio/ui/VideoStop.ogg)
 11-17 15:37:40.620   238 11996 D RockFFPlayer: prepareAsync ok

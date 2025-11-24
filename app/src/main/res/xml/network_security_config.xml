@@ -3,4 +3,11 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="false">54.180.98.151</domain>
     </domain-config>
+
+    <!-- qlak315.iptime.org 에 대해서 HTTP 허용 -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">qlak315.iptime.org</domain>
+    </domain-config>
+
+
 </network-security-config>
