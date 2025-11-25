@@ -60,8 +60,10 @@ public class CameraWebSocketMonitor {
     }
 
     public void startMonitoring() {
+        Log.d(TAG, "========== startMonitoring() CALLED ==========");
+
         if (isMonitoring) {
-            Log.w(TAG, "Already monitoring");
+            Log.w(TAG, "⚠️ Already monitoring - ignoring request");
             return;
         }
 
@@ -70,9 +72,16 @@ public class CameraWebSocketMonitor {
         frameCount = 0;
 
         // WebSocket 연결
+        Log.d(TAG, "Connecting WebSocket...");
         wsClient.connect();
+        Log.d(TAG, "✅ WebSocket connect() called");
 
+        // 백그라운드 스레드 시작
+        Log.d(TAG, "Starting background thread...");
         startBackgroundThread();
+
+        // 카메라 열기
+        Log.d(TAG, "Opening camera...");
         openCamera();
     }
 
@@ -116,31 +125,46 @@ public class CameraWebSocketMonitor {
 
     private void openCamera() {
         try {
+            Log.d(TAG, "========== CAMERA OPENING START ==========");
+
             String cameraId = getCameraId();
             if (cameraId == null) {
+                Log.e(TAG, "❌ No camera found!");
                 if (listener != null) listener.onError("카메라를 찾을 수 없습니다", null);
                 return;
             }
+            Log.d(TAG, "✅ Camera ID found: " + cameraId);
 
-            Log.d(TAG, "Opening camera: " + cameraId);
-
+            // 권한 확인
             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
                     != PackageManager.PERMISSION_GRANTED) {
-                Log.e(TAG, "❌ Camera permission not granted!");
+                Log.e(TAG, "❌ Camera permission NOT granted!");
                 if (listener != null) listener.onError("카메라 권한이 없습니다", null);
                 return;
             }
+            Log.d(TAG, "✅ Camera permission granted");
 
-            // ImageReader 생성 (해상도 낮춤: 640x480 → 480x360, 부하 감소)
-            // 버퍼 크기도 5 → 3으로 줄임 (메모리 절약)
+            // ImageReader 생성
+            Log.d(TAG, "Creating ImageReader (480x360, JPEG, buffers=3)...");
             imageReader = ImageReader.newInstance(480, 360, ImageFormat.JPEG, 3);
             imageReader.setOnImageAvailableListener(imageAvailableListener, backgroundHandler);
+            Log.d(TAG, "✅ ImageReader created");
 
+            // 카메라 열기
+            Log.d(TAG, "Calling cameraManager.openCamera()...");
             cameraManager.openCamera(cameraId, stateCallback, backgroundHandler);
+            Log.d(TAG, "✅ openCamera() called (waiting for callback...)");
 
         } catch (CameraAccessException e) {
-            Log.e(TAG, "❌ Failed to open camera", e);
-            if (listener != null) listener.onError("카메라 열기 실패", e);
+            Log.e(TAG, "❌ CameraAccessException in openCamera()", e);
+            Log.e(TAG, "Exception reason: " + e.getReason());
+            Log.e(TAG, "Exception message: " + e.getMessage());
+            if (listener != null) listener.onError("카메라 열기 실패: " + e.getMessage(), e);
+        } catch (Exception e) {
+            Log.e(TAG, "❌ Unexpected exception in openCamera()", e);
+            Log.e(TAG, "Exception type: " + e.getClass().getName());
+            Log.e(TAG, "Exception message: " + e.getMessage());
+            if (listener != null) listener.onError("예상치 못한 에러: " + e.getMessage(), e);
         }
     }
 
@@ -175,24 +199,61 @@ public class CameraWebSocketMonitor {
     private final CameraDevice.StateCallback stateCallback = new CameraDevice.StateCallback() {
         @Override
         public void onOpened(@NonNull CameraDevice camera) {
+            Log.d(TAG, "========== onOpened() CALLBACK ==========");
             cameraDevice = camera;
-            Log.d(TAG, "✅ Camera opened successfully");
+            Log.d(TAG, "✅ Camera opened successfully!");
+            Log.d(TAG, "Camera device ID: " + camera.getId());
             createCaptureSession();
         }
 
         @Override
         public void onDisconnected(@NonNull CameraDevice camera) {
+            Log.w(TAG, "========== onDisconnected() CALLBACK ==========");
+            Log.w(TAG, "⚠️ Camera disconnected - ID: " + camera.getId());
             camera.close();
             cameraDevice = null;
-            Log.w(TAG, "⚠️ Camera disconnected");
         }
 
         @Override
         public void onError(@NonNull CameraDevice camera, int error) {
+            Log.e(TAG, "========== onError() CALLBACK ==========");
+            Log.e(TAG, "❌ Camera error code: " + error);
+            Log.e(TAG, "Camera ID: " + camera.getId());
+
+            String errorMsg;
+            switch (error) {
+                case CameraDevice.StateCallback.ERROR_CAMERA_IN_USE:
+                    errorMsg = "ERROR_CAMERA_IN_USE (1) - 카메라가 다른 앱/프로세스에서 사용 중";
+                    Log.e(TAG, "ERROR: " + errorMsg);
+                    break;
+                case CameraDevice.StateCallback.ERROR_CAMERA_DEVICE:
+                    errorMsg = "ERROR_CAMERA_DEVICE (2) - 카메라 디바이스에 치명적 에러 발생";
+                    Log.e(TAG, "ERROR: " + errorMsg);
+                    Log.e(TAG, "HINT: 카메라 하드웨어 문제이거나 다른 프로세스가 독점 중일 수 있습니다");
+                    break;
+                case CameraDevice.StateCallback.ERROR_CAMERA_SERVICE:
+                    errorMsg = "ERROR_CAMERA_SERVICE (3) - 카메라 서비스 치명적 에러";
+                    Log.e(TAG, "ERROR: " + errorMsg);
+                    Log.e(TAG, "HINT: 시스템 카메라 서비스에 문제가 있습니다");
+                    break;
+                case CameraDevice.StateCallback.ERROR_CAMERA_DISABLED:
+                    errorMsg = "ERROR_CAMERA_DISABLED (4) - 카메라가 정책에 의해 비활성화됨";
+                    Log.e(TAG, "ERROR: " + errorMsg);
+                    break;
+                case CameraDevice.StateCallback.ERROR_MAX_CAMERAS_IN_USE:
+                    errorMsg = "ERROR_MAX_CAMERAS_IN_USE (5) - 최대 카메라 개수 도달";
+                    Log.e(TAG, "ERROR: " + errorMsg);
+                    break;
+                default:
+                    errorMsg = "UNKNOWN_ERROR (" + error + ")";
+                    Log.e(TAG, "ERROR: " + errorMsg);
+                    break;
+            }
+
             camera.close();
             cameraDevice = null;
-            Log.e(TAG, "❌ Camera error: " + error);
-            if (listener != null) listener.onError("카메라 에러: " + error, null);
+
+            if (listener != null) listener.onError("카메라 에러: " + errorMsg, null);
         }
     };
 

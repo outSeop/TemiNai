@@ -11,6 +11,7 @@ import com.example.teminai.camera.CameraWebSocketMonitor;
 import com.example.teminai.stt.SttRecorderClient;
 import com.example.teminai.ai.AbnormalLastClient;
 import com.example.teminai.ai.AbnormalAiClient;
+import com.example.teminai.ui.MainActivity;
 import com.robotemi.sdk.Robot;
 import com.robotemi.sdk.TtsRequest;
 
@@ -69,7 +70,6 @@ public class TemiJsBridge {
             if (target == null || target.isEmpty()) {
                 Log.e(TAG, "goToBooth: Invalid location ID: " + locationID);
                 sendJsError("위치 ID가 잘못되었습니다: " + locationID);
-                return;
             }
 
             goTo(target);
@@ -95,7 +95,14 @@ public class TemiJsBridge {
         }
         Log.d(TAG, "Finished goTo: " + location);
     }
-
+    @JavascriptInterface
+    public void startPhotoSequence() {
+        activity.runOnUiThread(() -> {
+            if (activity instanceof MainActivity) {
+                ((MainActivity) activity).launchPhotoBoothCamera();
+            }
+        });
+    }
     @JavascriptInterface
     public void startListening() {
         Log.d(TAG, "Start listening called from JS");
@@ -106,6 +113,7 @@ public class TemiJsBridge {
         }
         sttClient.startRecording();
     }
+
 
     @JavascriptInterface
     public void stopListening() {
@@ -119,12 +127,39 @@ public class TemiJsBridge {
     @JavascriptInterface
     public void startWebSocketMonitoring() {
         Log.d(TAG, "🚀 START WEBSOCKET MONITORING (React → Android)");
-        if (wsMonitor != null) {
-            wsMonitor.startMonitoring();
-        } else {
-            Log.e(TAG, "❌ wsMonitor is null!");
-            sendJsError("WebSocket 모니터 서비스가 초기화되지 않았습니다.");
-        }
+
+        activity.runOnUiThread(() -> {
+            // 1) WebView 쪽 카메라 먼저 강제 종료
+            try {
+                if (webView != null) {
+                    String js = "window.temiForceStopCamera && window.temiForceStopCamera();";
+                    Log.d(TAG, "📡 Calling JS to force-stop WebView camera: " + js);
+                    webView.evaluateJavascript(js, null);
+                } else {
+                    Log.w(TAG, "webView is null, cannot call temiForceStopCamera");
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "Error while calling temiForceStopCamera in JS", e);
+            }
+
+            // 2) 약간의 딜레이 후 네이티브 WebSocket 모니터링 시작
+            Runnable startNativeMonitor = () -> {
+                if (wsMonitor != null) {
+                    wsMonitor.startMonitoring();
+                } else {
+                    Log.e(TAG, "❌ wsMonitor is null!");
+                    sendJsError("WebSocket 모니터 서비스가 초기화되지 않았습니다.");
+                }
+            };
+
+            // WebView가 있으면 WebView에 postDelayed, 없으면 Handler 사용
+            if (webView != null) {
+                webView.postDelayed(startNativeMonitor, 300L);
+            } else {
+                new android.os.Handler(android.os.Looper.getMainLooper())
+                        .postDelayed(startNativeMonitor, 300L);
+            }
+        });
     }
 
     @JavascriptInterface
@@ -215,6 +250,47 @@ public class TemiJsBridge {
             sendJsError("이미지 디코딩 실패: " + e.getMessage());
         }
         Log.d(TAG, "========== ABNORMAL FRAME SEND END ==========");
+    }
+
+    /**
+     * React에서 이벤트 리스너 등록
+     * window.TemiInterface.addListener('onGoToLocationStatusChanged')
+     */
+    @JavascriptInterface
+    public void addListener(String eventName) {
+        Log.d(TAG, "📝 Adding listener: " + eventName);
+
+        if ("onGoToLocationStatusChanged".equals(eventName)) {
+            // React 측에 리스너가 등록되었음을 알림
+            activity.runOnUiThread(() -> {
+                String js = "window.TemiInterface._goToListener = function(event) { " +
+                           "  console.log('🔔 Android → React: Navigation event received', event); " +
+                           "  if (window.TemiInterface._listeners && " +
+                           "      window.TemiInterface._listeners['onGoToLocationStatusChanged']) { " +
+                           "    window.TemiInterface._listeners['onGoToLocationStatusChanged'](event); " +
+                           "  } else { " +
+                           "    console.warn('⚠️ No listener registered for onGoToLocationStatusChanged'); " +
+                           "  } " +
+                           "};";
+                webView.evaluateJavascript(js, null);
+                Log.d(TAG, "✅ Listener bridge created for: " + eventName);
+            });
+        }
+    }
+
+    /**
+     * React에서 이벤트 리스너 제거
+     */
+    @JavascriptInterface
+    public void removeListener(String eventName) {
+        Log.d(TAG, "🗑️ Removing listener: " + eventName);
+
+        if ("onGoToLocationStatusChanged".equals(eventName)) {
+            activity.runOnUiThread(() -> {
+                String js = "delete window.TemiInterface._goToListener;";
+                webView.evaluateJavascript(js, null);
+            });
+        }
     }
 
     private void sendJsError(String message) {

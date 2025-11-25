@@ -3,9 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- 리액트 WebView -->
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <!-- 카메라 박스 (overlay) - 4:3 비율 유지 (480x640 -> 180도 회전 시 640x480) -->
+    <FrameLayout
+        android:id="@+id/camera_container"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:background="#000000" />
 
 </FrameLayout>

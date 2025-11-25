@@ -35,6 +35,11 @@
 
         </activity>
 
+        <!-- 🔽 새로 추가해야 할 포토부스 카메라 액티비티 -->
+        <activity
+            android:name=".PhotoBoothCameraActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
